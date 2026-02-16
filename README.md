@@ -1,50 +1,107 @@
-# Welcome to your Expo app 👋
+# UBER Clone (React Native + Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Application mobile d'apprentissage inspirée d'Uber, construite avec **React Native**, **Expo Router** et **NativeWind**.
 
-## Get started
+## Aperçu du projet
 
-1. Install dependencies
+Ce repository contient une base d'application de type VTC avec :
 
-   ```bash
-   npm install
-   ```
+- un flux d'onboarding (swiper) ;
+- des écrans d'authentification (`sign-in` / `sign-up`) ;
+- une navigation par onglets pour les sections principales (`Home`, `Rides`, `Chat`, `Profile`) ;
+- une base de composants réutilisables (`InputField`, bouton custom, OAuth UI).
 
-2. Start the app
+> ⚠️ Le projet est en cours de construction : certaines actions (authentification, logique métier) sont encore des placeholders.
 
-   ```bash
-   npx expo start
-   ```
+## Stack technique
 
-In the output, you'll find options to open the app in a
+- **Expo**
+- **React Native**
+- **Expo Router** (routing basé sur les fichiers)
+- **TypeScript**
+- **NativeWind + TailwindCSS**
+- **React Navigation** (tabs)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Structure principale
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+app/
+  (auth)/
+    welcome.tsx
+    sign-in.tsx
+    sign-up.tsx
+  (root)/(tabs)/
+    home.tsx
+    rides.tsx
+    chat.tsx
+    profile.tsx
+components/
+constants/
+assets/
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Prérequis
 
-## Learn more
+- **Node.js** (LTS recommandé)
+- **npm**
+- **Expo CLI** (via `npx expo`)
+- Émulateur Android/iOS ou application **Expo Go** sur mobile
 
-To learn more about developing your project with Expo, look at the following resources:
+## Installation
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+## Lancer le projet
 
-Join our community of developers creating universal apps.
+Démarrer le serveur Expo :
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm run start
+```
+
+Lancer sur les différentes plateformes :
+
+```bash
+npm run android
+npm run ios
+npm run web
+```
+
+## Scripts disponibles
+
+- `npm run start` : démarre Expo
+- `npm run android` : lance l'app sur Android
+- `npm run ios` : lance l'app sur iOS
+- `npm run web` : lance la version web
+- `npm run lint` : exécute le linting
+- `npm run reset-project` : réinitialise le projet de base Expo
+
+## Fonctionnalités actuelles
+
+- Onboarding en 3 étapes avec pagination.
+- Écrans d'inscription / connexion avec composants de formulaire.
+- Bouton OAuth (UI).
+- Navigation par onglets (écrans placeholder).
+
+## Améliorations possibles
+
+- Intégration d'une vraie authentification (Firebase, Supabase, Clerk, etc.).
+- Gestion de l'état global (Zustand/Redux).
+- Intégration cartographique (Google Maps / Mapbox).
+- Réservation de trajet, estimation de prix et historique.
+- Chat en temps réel et notifications push.
+
+## Contribution
+
+Les contributions sont bienvenues :
+
+1. Fork du repo
+2. Création d'une branche feature (`git checkout -b feature/ma-feature`)
+3. Commit (`git commit -m "feat: ..."`)
+4. Push et ouverture d'une Pull Request
+
+## Licence
+
+Projet à but éducatif.
